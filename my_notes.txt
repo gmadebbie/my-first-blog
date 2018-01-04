@@ -1,0 +1,64 @@
+58Chell3(
+
+(myvenv) ~/django$ python manage.py runserver
+
+To promote changes from console to GIT, from virtualenvironment in console:
+
+(myproject) H:\django>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   blog/views.py
+        modified:   mysite/urls.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        blog/templates/
+        blog/urls.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+(myproject) H:\django>git add --all
+warning: LF will be replaced by CRLF in blog/views.py.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in mysite/urls.py.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in blog/templates/blog/post_list.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in blog/urls.py.
+The file will have its original line endings in your working directory.
+
+(myproject) H:\django>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   blog/templates/blog/post_list.html
+        new file:   blog/urls.py
+        modified:   blog/views.py
+        modified:   mysite/urls.py
+
+
+(myproject) H:\django>git commit -m "Modified templates to display posts from db
+"
+[master 92b5098] Modified templates to display posts from db
+ 4 files changed, 38 insertions(+), 2 deletions(-)
+ create mode 100644 blog/templates/blog/post_list.html
+ create mode 100644 blog/urls.py
+
+(myproject) H:\django>git push
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 1.27 KiB | 24.00 KiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/gmadebbie/my-first-blog.git
+   08ad836..92b5098  master -> master
